@@ -34,7 +34,7 @@ go run ./cmd/main.go
 
 The API will be available on the configured port (default: 8080).
 
-#### Links 
+### Links 
 
 | Name                   | URL                                                            | Description                        |
 |------------------------|----------------------------------------------------------------| ---------------------------------- |
