@@ -1,0 +1,17 @@
+development:
+  env: "dev"
+  service: "shipment-coordinator"
+  version: "1.0.0"
+
+  server:
+    port: "8080"
+
+  database:
+    url: "postgres://postgres:postgres@localhost:5432/postgres?sslmode=disable"
+
+  logging:
+    level: "debug"
+
+  telemetry:
+    enabled: true
+    endpoint: "localhost:4317"

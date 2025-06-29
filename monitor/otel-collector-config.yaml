@@ -1,0 +1,46 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+  filelog:
+    include: [ "./var/log/shipment-coordinator/*.log" ]
+    start_at: beginning
+    operators:
+      - type: json_parser
+        parse_from: body
+        timestamp:
+          parse_from: attributes.ts
+          layout: "%Y-%m-%dT%H:%M:%S%z"
+        severity:
+          parse_from: attributes.level
+          severity_map:
+            "debug": DEBUG
+            "info": INFO
+            "warn": WARN
+            "error": ERROR
+processors:
+  batch:
+extensions:
+  health_check: {}
+exporters:
+  otlp:
+    endpoint: jaeger:4317
+    tls:
+      insecure: true
+  prometheus:
+    endpoint: "0.0.0.0:8889"
+  loki:
+    endpoint: "http://loki:3100/loki/api/v1/push"
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      exporters: [otlp]
+    metrics:
+      receivers: [otlp]
+      exporters: [prometheus]
+    logs:
+      receivers: [filelog]
+      processors: [batch]
+      exporters: [loki]
