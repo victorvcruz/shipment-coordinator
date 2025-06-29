@@ -34,7 +34,7 @@ go run ./cmd/main.go
 
 The API will be available on the configured port (default: 8080).
 
-### Links 
+#### Links 
 
 | Name                   | URL                                                            | Description                        |
 |------------------------|----------------------------------------------------------------| ---------------------------------- |
@@ -43,8 +43,6 @@ The API will be available on the configured port (default: 8080).
 | **Prometheus UI**      | [http://localhost:9090](http://localhost:9090)                 | Prometheus UI for querying metrics |
 | **Prometheus Metrics** | [http://localhost:8889/metrics](http://localhost:8889/metrics) | OTEL metrics endpoint (exposed)    |
 | **Grafana**            | [http://localhost:3000/dashboards](http://localhost:3000)         | Visualization dashboard (Grafana)  |
-
-You can see the API documentation at http://localhost:8080/docs
 
 ## How to Test
 
