@@ -44,8 +44,6 @@ The API will be available on the configured port (default: 8080).
 | **Prometheus Metrics** | [http://localhost:8889/metrics](http://localhost:8889/metrics) | OTEL metrics endpoint (exposed)    |
 | **Grafana**            | [http://localhost:3000/dashboards](http://localhost:3000)         | Visualization dashboard (Grafana)  |
 
-You can see the API documentation at http://localhost:8080/docs
-
 ## How to Test
 
 Run all automated tests:
