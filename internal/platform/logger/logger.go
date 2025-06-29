@@ -9,34 +9,6 @@ import (
 	"go.uber.org/zap/zapcore"
 )
 
-//func NewLogger(cfg *config.AppConfig) (*zap.Logger, error) {
-//	hostname, _ := os.Hostname()
-//
-//	logConfig := zap.NewProductionConfig()
-//	logConfig.EncoderConfig.EncodeTime = zapcore.ISO8601TimeEncoder
-//	logConfig.InitialFields = map[string]any{
-//		"host.name": hostname,
-//		"env":       cfg.Env,
-//		"service":   cfg.Service,
-//		"version":   cfg.Version,
-//	}
-//
-//	level, err := zapcore.ParseLevel(cfg.Logging.Level)
-//	if err != nil {
-//		return nil, err
-//	}
-//
-//	logConfig.Level = zap.NewAtomicLevelAt(level)
-//
-//	logger, err := logConfig.Build()
-//	if err != nil {
-//		return nil, err
-//	}
-//
-//	zap.ReplaceGlobals(logger)
-//	return logger, nil
-//}
-
 func NewLogger(cfg *config.AppConfig) (*zap.Logger, error) {
 	hostname, _ := os.Hostname()
 
