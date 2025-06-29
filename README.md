@@ -8,7 +8,6 @@
 
 - Go 1.24.4+
 - PostgreSQL (Docker)
-- [Go modules](https://golang.org/doc/go1.11#modules)
 - [Docker Compose](https://docs.docker.com/compose/) (for local environment)
 
 ## How to Run
